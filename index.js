@@ -174,6 +174,8 @@ const INITBD = async() => {
    }
 }
 console.log( "ponto de execucao 3" )
+
+// Inicializa o app
 INITBD();
 
 APP.listen( 3000 , ( err ) => {
