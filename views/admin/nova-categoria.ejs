@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+  <h2>
+    Nova Categoria:
+    <a href="/admin/categorias"><button>Voltar Categorias</button></a>
+  </h2>
+  <div>
+    <form method="POST">
+      <label>Categoria:</label>
+      <input type="text" name="categoria">
+      <br>
+      <button>Salvar Categoria</button>
+    </form>
+  </div>
+ <%- include('footer.ejs') %>

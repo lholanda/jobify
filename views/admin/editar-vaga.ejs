@@ -1,0 +1,25 @@
+<%- include('header.ejs') %>
+  <h2>
+    Editar Vaga:
+    <a href="/admin/vagas"><button>Voltar Vagas</button></a>
+  </h2>
+  <div>
+    <form method="POST">
+      <!-- Aqui estou editando os capos de VAGA, ou seja, vaga.titulo, vaga.categoria, vaga.descricao-->
+      <label>Título:</label>
+      <!-- value - para puxar o campo que está gravado no banco -->
+      <input type="text" name="titulo" value="<%= vaga.titulo %>"><br>
+      <label>Descrição da vaga:</label>
+      <!-- textarea não possue value para puxar o campo que está gravado no banco deve colocar dentro da <tag> -->
+      <textarea name="descricao"><%= vaga.descricao %></textarea><br>
+      <label>Categoria: </label>
+      <select name="categoria">
+        <% categorias.forEach( categoria => { %>
+          <option value="<%= categoria.id %>" <% if(categoria.id == vaga.categoria) { %>selected<% } %> > <%= categoria.categoria %></option>
+        <% }) %>
+      </select>
+      <br>
+      <button>Salvar Vaga</button>
+    </form>
+  </div>
+ <%- include('footer.ejs') %>
