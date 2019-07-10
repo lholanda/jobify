@@ -1,9 +1,10 @@
 const EXPRESS = require( 'express' ) 
 const APP = EXPRESS()
-
 const BODYPARSER = require( 'body-parser' )
+
+const PATH = require( 'path' )
 const SQLITE = require( 'sqlite' ) // importa o banco
-const DBCONEXAO = SQLITE.open( 'banco.sqlite' , { Promise }) // cria a conexao com o banco
+const DBCONEXAO = SQLITE.open(PATH.resolve(__dirname, 'banco.sqlite' , { Promise }) // cria a conexao com o banco
 
 const port = process.env.PORT || 3000
 
