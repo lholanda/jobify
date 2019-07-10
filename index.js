@@ -5,6 +5,8 @@ const BODYPARSER = require( 'body-parser' )
 const SQLITE = require( 'sqlite' ) // importa o banco
 const DBCONEXAO = SQLITE.open( 'banco.sqlite' , { Promise }) // cria a conexao com o banco
 
+const port = process.env.PORT || 3000
+
 var luiz = " single-thread"
 
 console.log ( "ponto de execucao 1"+luiz )
@@ -178,7 +180,8 @@ console.log( "ponto de execucao 3" )
 // Inicializa o app
 INITBD();
 
-APP.listen( 3000 , ( err ) => {
+
+APP.listen( port , ( err ) => {
     if ( err ) {
         console.log ( "Erro ao rodar o servidor Jobify" )
     } else {
