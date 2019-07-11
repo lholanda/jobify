@@ -24,7 +24,7 @@ APP.use('/admin', (req, res, next)=> {
     console.log('Autorizado no '+req.hostname)
     next()
   } else {
-    res.send('Acesso não autorizado !!!')
+    res.send('<h2>Acesso não autorizado !!!<h2>')
   }
 })
 
