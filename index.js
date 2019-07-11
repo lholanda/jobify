@@ -12,6 +12,7 @@ var luiz = " single-thread"
 
 console.log ( "ponto de execucao 1"+luiz )
 
+APP.set('views', path.join(__dirname, 'views'))
 APP.set('view engine', 'ejs' )     // Setamos que nossa engine será o ejs
 APP.use(EXPRESS.static( 'public' ))
 //todas as requisicoes irao passar pelo BODYPARSER e vai tentar entende o que veio no corpo da requisicao
