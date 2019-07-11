@@ -8,15 +8,14 @@ const DBCONEXAO = SQLITE.open(path.resolve(__dirname, 'banco.sqlite' ), { Promis
 
 const port = process.env.PORT || 3000
 
-
-
 var luiz = " single-thread"
 
 console.log ( "ponto de execucao 1"+luiz )
 
+// informa onde estão os views
 APP.set('views', path.join(__dirname, 'views'))
 APP.set('view engine', 'ejs' )     // Setamos que nossa engine será o ejs
-APP.use(EXPRESS.static( 'public' ))
+APP.use(EXPRESS.static(path.join(__dirname, 'public' )))
 //todas as requisicoes irao passar pelo BODYPARSER e vai tentar entende o que veio no corpo da requisicao
 APP.use(BODYPARSER.urlencoded({ extended: true })) // entendendo a urlencoded
 // Seleciona categorias e vagas (de cada categoria)
@@ -193,3 +192,8 @@ APP.listen( port , ( err ) => {
     }
 })
 console.log ( "ponto de execucao 4" )
+
+
+//var path1 = require("path");
+console.log(". = %s", path.resolve(".")); 
+console.log("__dirname = %s", path.resolve(__dirname));
