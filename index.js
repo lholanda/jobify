@@ -18,6 +18,17 @@ APP.set('view engine', 'ejs' )     // Setamos que nossa engine será o ejs
 APP.use(EXPRESS.static(path.join(__dirname, 'public' )))
 //todas as requisicoes irao passar pelo BODYPARSER e vai tentar entende o que veio no corpo da requisicao
 APP.use(BODYPARSER.urlencoded({ extended: true })) // entendendo a urlencoded
+
+APP.use('/admin', (req, res, next)=> {
+  if(req.hostname == 'localhost'){
+    console.log('Autorizado no '+req.hostname)
+    next()
+  } else {
+    res.send('Acesso não autorizado !!!')
+  }
+})
+
+
 // Seleciona categorias e vagas (de cada categoria)
 // ... spread operator
 APP.get('/', async( request, response ) => {
