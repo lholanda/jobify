@@ -8,6 +8,8 @@ const DBCONEXAO = SQLITE.open(path.resolve(__dirname, 'banco.sqlite' ), { Promis
 
 const port = process.env.PORT || 3000
 
+
+
 var luiz = " single-thread"
 
 console.log ( "ponto de execucao 1"+luiz )
